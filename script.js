@@ -9,4 +9,11 @@ generateBtn.addEventListener('click', () => {
   img.src = imgUrl;
 
   gridContainer.appendChild(img);
+
+  if (gridContainer.children.length >= 30) {
+    const confirmed = confirm("You have reached the maximum number of images. Would you like to delete all of them?");
+    if (confirmed) {
+      gridContainer.innerHTML = "";
+    }
+  }
 });
